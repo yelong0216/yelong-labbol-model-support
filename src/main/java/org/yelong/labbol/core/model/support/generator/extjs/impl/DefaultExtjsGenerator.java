@@ -43,7 +43,6 @@ public class DefaultExtjsGenerator implements ExtjsGenerator{
 		}
 	}
 	
-	
 	protected void genFile(JSTCode code,File jsFile) throws ExtjsGenerateException {
 		try {
 			Template template = freemarkerConfiguration.getTemplate(FTL_NAME,"UTF-8");
@@ -81,7 +80,7 @@ public class DefaultExtjsGenerator implements ExtjsGenerator{
 		int columnWidth = 1000 / useableColumnCount;
 		for (FieldAndColumn fieldAndColumn : modelAndTable.getFieldAndColumns()) {
 			classFields.append("\"" + fieldAndColumn.getFieldName() + "\",");
-			gridColumns.append("\n\t\t{header : \"" + fieldAndColumn.getDesc() + "\", dataIndex : \"" + fieldAndColumn.getFieldName() + "\", width : " + columnWidth + ", hidden : " + fieldAndColumn.isPrimaryKey());
+			gridColumns.append("\n\t\t{header : \"" + fieldAndColumn.getColumnName() + "\", dataIndex : \"" + fieldAndColumn.getFieldName() + "\", width : " + columnWidth + ", hidden : " + fieldAndColumn.isPrimaryKey());
 			gridColumns.append("},");
 		}
 		classFields.deleteCharAt(classFields.length()-1);
@@ -153,7 +152,7 @@ public class DefaultExtjsGenerator implements ExtjsGenerator{
 
 	protected String generateFormField(FieldAndColumn fieldAndColumn) {
 		String tab = "\t\t\t\t";
-		String fieldLabel = fieldAndColumn.getDesc();
+		String fieldLabel = fieldAndColumn.getColumnName();
 		StringBuilder formField = new StringBuilder();
 		formField.append("{\n" + tab + "xtype : \"" + getFormFieldType(fieldAndColumn.getFieldType()) + "\",");
 		formField.append("\n" + tab + "id : \"" + fieldAndColumn.getFieldName() + "\",");

@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.yelong0216.labbol</groupId>
 	<artifactId>yelong-labbol-model-support</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<packaging>jar</packaging>
 	<name>yelong-labbol-model-support</name>
 	<url>https://github.com/yelong0216/yelong-labbol-model-support.git</url>
@@ -25,7 +25,7 @@
 		<url>https://github.com/yelong0216/yelong-labbol-model-support</url>
 	</scm>
 	<properties>
-		<yelong.version>1.0.0</yelong.version>
+		<yelong.version>1.0.1</yelong.version>
 		<yelong-core.version>${yelong.version}</yelong-core.version>
 		<freemarker.version>2.3.28</freemarker.version>
 		<spring.version>5.1.5.RELEASE</spring.version>
